@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8"> 
+        <link rel="stylesheet" href="FUMap.css">
+        <title>FUMap</title>
+    </head>
+    <body>
+        <img src="images/福大ロゴ.png" class="logo" width="300">
+        <p>　　<input type="text" id="search-text" class="search-text" list="place"><button type="button" onclick="search()">検索</button></p>  
+        <!-- <datalist id="place">
+            <option value="sample1"></option>
+            <option value="sample2"></option>
+        </datalist> -->
+        <div class="imagesBox">
+            <img src="images/mapimg_s.png" class="map" alt="マップ" class="map">
+            <img src="images/地図マーカーのアイコン素材4.png" class="pin" id="pin-point">
+        </div>
+        <!-- <div id="dispArea" class="guideArea">
+            <p id="guide">座標入力</p>
+            <p>　X座標　<input type="text" id="textBoxX" value="250"></p>
+            <p>　Y座標　<input type="text" id="textBoxY" value="500"></p>
+          </div>
+          <button type="button" onclick="pin()">座標変更</button>
+          <p id="output-messageX"></p>
+          <p id="output-messageY"></p> -->
+
+          <script src="FUMap.js"></script>
+    </body>
+ </html>
