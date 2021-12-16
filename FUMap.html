@@ -1,3 +1,4 @@
+<!-- http://127.0.0.1:5500/FUMap.html -->
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -6,24 +7,63 @@
         <title>FUMap</title>
     </head>
     <body>
+        
         <img src="images/福大ロゴ.png" class="logo" width="300">
-        <p>　　<input type="text" id="search-text" class="search-text" list="place"><button type="button" onclick="search()">検索</button></p>  
-        <!-- <datalist id="place">
-            <option value="sample1"></option>
-            <option value="sample2"></option>
-        </datalist> -->
+            <!-- <div class="icon">
+                <div class="icon-style">
+                    <a href="https://twitter.com/fukuoka_univ_pr"><img src="images/icon-twitter.png"></a>
+                    <a href="https://www.facebook.com/FukuokaUniversity/"><img src="images/thumbnail_icon-facebook.png"></a>
+                </div>
+                <div class="icon-style">
+                    <a href="https://www.instagram.com/fukuoka_university/"><img src="images/icon-instagram (1).png"></a>
+                    <a href="https://www.youtube.com/channel/UCcELCxTQvJAFxeX0X9q1ecg"><img src="images/icon-youtube.png"></a>
+                </div>
+                
+                
+            </div> -->
+            
+
+        
+        <!-- <form id="form4">
+            <input id="sbox4" type="text" placeholder="キーワード検索">
+            <button id="sbtn4" type="submit" onclick="search()"><i class="fas fa-search"></i></button>
+        </form> -->
+
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <div class="search_container">
+            <input type="search" id="search-text" size="15" placeholder=" キーワード検索">
+            <input type="button" class="fas" onclick="search()" value="&#xf002">
+        </div>
+
+        <!-- <p>　　<input type="text" id="search-text" class="search-text" list="place"><button type="button" onclick="search()">検索</button></p>   -->
+        
+        
+        
+        <div class="cp_navi">
+            <ul>
+                <li class="cp_navi1"> <span onclick ="showimg1()"> マップ１ </span></li>
+                <li class="cp_navi2"> <span onclick ="showimg2()"> マップ２ </span></li>
+                <li class="cp_navi2"> <span onclick ="showimg2()"> マップ３ </span></li>
+                <li class="cp_navi2"> <span onclick ="showimg2()"> AED </span></li>
+            </ul>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <div class="imagesBox">
-            <img src="images/mapimg_s.png" class="map" alt="マップ" class="map">
+            <img src="images/FUmap.png" class="map" alt="マップ" class="map">
             <img src="images/地図マーカーのアイコン素材4.png" class="pin" id="pin-point">
         </div>
-        <!-- <div id="dispArea" class="guideArea">
-            <p id="guide">座標入力</p>
-            <p>　X座標　<input type="text" id="textBoxX" value="250"></p>
-            <p>　Y座標　<input type="text" id="textBoxY" value="500"></p>
-          </div>
-          <button type="button" onclick="pin()">座標変更</button>
-          <p id="output-messageX"></p>
-          <p id="output-messageY"></p> -->
+        
 
           <script src="FUMap.js"></script>
     </body>
