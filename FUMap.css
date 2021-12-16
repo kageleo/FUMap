@@ -1,10 +1,178 @@
+/* .ul {
+    width: 100%;
+} */
+
 .logo {
     width: 40%;
+    max-width: 400px;
+    min-width: 230px;
 }
+
+/* .icon {
+    display: inline-block;
+    text-align: right;
+    position: absolute;
+    right: 20px;
+    width: 60%;
+    max-width: 600px;
+}
+
+.icon-style > a > img {
+    width: 10%;
+    padding-right: 1%;
+} */
+
+
+
+/* #form4 {
+    position:relative;
+    max-width:300px;	
+    margin-bottom:20px;
+}
+#sbox4{
+    height:50px;
+    padding:0 10px; 
+    position:absolute; 
+    left:0;
+    top:0; 
+    border-radius:25px;
+    outline:0;
+    background:#eee;
+}
+#sbtn4{
+    height:50px;
+    width:50px;	
+    position:absolute; 
+    left:250px; 
+    top:0;
+    background:#8d0000;
+    color:#fff;
+    border:none;
+    border-radius:0 25px 25px 0;
+}
+#sbtn4 .fa-search{
+    font-size:20px;	
+    position:absolute;
+    top:30%;
+    left:30%;	
+}
+#sbtn4:hover{
+    color:#888;
+} */
+
+
+/* .search_container input[type="text"]{
+	border: none;
+	height: 2.0em;
+  }
+.search_container input[type="text"]:focus {
+	outline: 0;
+  }
+.search_container input[type="submit"]{
+	cursor: pointer;
+	font-family: FontAwesome;
+	border: none;
+	background: #8d0000;
+	color: #fff;
+	position: absolute;
+	width: 3.5em; 
+	height: 3.5em;
+	right:0px;
+	top: -6px;
+	outline : none;
+} */
+
+
+
+.search_container{
+    box-sizing: border-box;
+    position: relative;
+    border: 2px solid #999;
+    display: block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    height: 2.3em;
+    width: 45%;
+    min-width: 300px;
+    max-width: 400px;
+    overflow: hidden;
+    left: 2%;
+}
+.search_container input[type="search"]{
+    border: none;
+    width: 87%;
+    height: 2.0em;
+}
+.search_container input[type="search"]:focus {
+    outline: 0;
+}
+.search_container input[type="button"]{
+    cursor: pointer;
+    font-family: FontAwesome;
+    border: none;
+    background: #8d0000;
+    color: #fff;
+    position: absolute;
+    width: 15%;
+    max-width: 4.5em;
+    height: 3.0em;
+    right: 0px;
+    top: -3px;
+    outline : none;
+}
+  
+
+/* ﾎﾞｰﾀﾞｰ */
+
+.cp_navi {
+	background-color: #8d0000;
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+	color: #888888;
+	display: block;
+	margin: 0.5em 0;
+	overflow: hidden;
+	width: 100%;
+}
+
+.cp_navi ul {
+	margin: 0;
+	padding: 0;
+    text-align: right;
+}
+
+.cp_navi ul li {
+	display: inline-block;
+	list-style-type: none;
+	-webkit-transition: all 0.2s;
+	        transition: all 0.2s;
+    color: #ffffff;
+    /* display: block; */
+    line-height: 56px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.cp_navi1 {
+    color: #aaaaaa;
+        display: block;
+        line-height: 56px;
+        padding: 0 10px;
+        text-decoration: none;
+}
+
+
+
+
+
+
+
+
 
 .search-text {
     display: inline-block;
-    width: 40%;
+    width: 55%;
 
 }
 
@@ -13,19 +181,19 @@
     position: relative;
 }
 
-.imagesBox .img {
+.imagesBox > .img {
     position: absolute;
 }
 
-.imagesBox .map {
+.imagesBox > .map {
     width: 100%;
     top: 0;
     left: 0;
 }
 
-.imagesBox .pin {
+.imagesBox > .pin {
     width: 5%;
-    height: 4.5%;
+    height: 6.5%;
     top: 50%;
     left: 80%;
     opacity: 0;
