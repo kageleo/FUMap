@@ -1,70 +1,90 @@
-<!-- http://127.0.0.1:5500/FUMap.html -->
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <meta charset="UTF-8"> 
         <link rel="stylesheet" href="FUMap.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <title>FUMap</title>
     </head>
     <body>
+
+        <!-- 福岡大学のロゴ ---------------------------------------------------------------- -->
+        <header>
+            <div class="logo">
+                <a href="https://www.fukuoka-u.ac.jp/"><img src="images/福大ロゴ3.png" class="logo-img" width="300"></a>
+            </div>
+        </header>
         
-        <img src="images/福大ロゴ.png" class="logo" width="300">
-            <!-- <div class="icon">
-                <div class="icon-style">
-                    <a href="https://twitter.com/fukuoka_univ_pr"><img src="images/icon-twitter.png"></a>
-                    <a href="https://www.facebook.com/FukuokaUniversity/"><img src="images/thumbnail_icon-facebook.png"></a>
-                </div>
-                <div class="icon-style">
-                    <a href="https://www.instagram.com/fukuoka_university/"><img src="images/icon-instagram (1).png"></a>
-                    <a href="https://www.youtube.com/channel/UCcELCxTQvJAFxeX0X9q1ecg"><img src="images/icon-youtube.png"></a>
-                </div>
-                
-                
-            </div> -->
-            
+
+
+        <div class="openbtn1"><span></span><span></span><span></span></div>
+        <nav id="g-nav">
+            <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+                <ul>
+                    <li onclick ="showimg1()"> キャンパスマップ </li>
+                    <li onclick ="showimg2()"> Campus Map </li>
+                    <li onclick ="showimg3()"> 校园地图 </li>
+                    <li onclick ="showimg4()"> 캠퍼스 맵 </li>
+                    <li onclick ="showimg5()">図書館</li>
+                    <li onclick ="showimg6()"> アクセスマップ </li>
+                    <li onclick ="showimg7()"> AED</li>
+                </ul>
+            </div>
+        </nav>
 
         
-        <!-- <form id="form4">
-            <input id="sbox4" type="text" placeholder="キーワード検索">
-            <button id="sbtn4" type="submit" onclick="search()"><i class="fas fa-search"></i></button>
-        </form> -->
 
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- 検索バー -------------------------------------------------------------------- -->
         <div class="search_container">
-            <input type="search" id="search-text" size="15" placeholder=" キーワード検索">
+            <input type="search" id="search-text" size="15" placeholder=" 福岡大学の建物を検索">
             <input type="button" class="fas" onclick="search()" value="&#xf002">
         </div>
 
-        <!-- <p>　　<input type="text" id="search-text" class="search-text" list="place"><button type="button" onclick="search()">検索</button></p>   -->
         
-        
-        
-        <div class="cp_navi">
+        <!-- メニュー -------------------------------------------------------------------- -->
+        <div class="cp_navi" id="cp_navi">
             <ul>
-                <li class="cp_navi1"> <span onclick ="showimg1()"> マップ１ </span></li>
-                <li class="cp_navi2"> <span onclick ="showimg2()"> マップ２ </span></li>
-                <li class="cp_navi2"> <span onclick ="showimg2()"> マップ３ </span></li>
-                <li class="cp_navi2"> <span onclick ="showimg2()"> AED </span></li>
+                <!-- <input type="checkbox" id="check_input"> -->
+                <li class="mapmenu"><label id="check_btn" for="check_input">マップメニュー <img src="images/矢印アイコン.png" class="icon"></label>
+                    <ul class="dropdown" id="dropdown">
+                        <li onclick ="showimg1()"> キャンパスマップ </li>
+                        <li onclick ="showimg2()"> Campus Map </li>
+                        <li onclick ="showimg3()"> 校园地图 </li>
+                        <li onclick ="showimg4()"> 캠퍼스 맵 </li>
+                    </ul>
+                </li>
+                <span>|</span>
+                <li onclick ="showimg5()">　　図書館　　</li>
+                <span>|</span>
+                <li onclick ="showimg6()"> アクセスマップ </li>
+                <span>|</span>
+                <li onclick ="showimg7()"> 　　AED　　 </li>
+                <!-- <span>　</span> -->
+                <!-- <li onclick ="showimg()"> <span> 証明書印刷機器 </span></li> -->
             </ul>
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+  
+
+        <!-- マップ -------------------------------------------------------------------- -->
         <div class="imagesBox">
-            <img src="images/FUmap.png" class="map" alt="マップ" class="map">
+            <img src="images/2021_campus_map_japan.png" class="map" alt="マップ" id="map">
             <img src="images/地図マーカーのアイコン素材4.png" class="pin" id="pin-point">
         </div>
         
 
-          <script src="FUMap.js"></script>
+        <form>
+            <div>
+                <p id="wsize">福岡大学</p>
+                <p id="hsize">福岡大学</p>
+                <h2>開発者紹介</h2>
+                <p>吉郷　景虎：データベーススペシャリスト</p>
+                <p>川口　拓也：応用情報処理技術者</p>
+                <p>内田　大貴：ITパスポート芸人</p>
+                <p>坂本　大輝：一般学生</p>
+            </div>
+        </form>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="FUMap.js"></script>
     </body>
  </html>
