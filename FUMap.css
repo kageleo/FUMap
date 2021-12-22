@@ -1,201 +1,383 @@
-/* .ul {
-    width: 100%;
-} */
 
-.logo {
-    width: 40%;
-    max-width: 400px;
-    min-width: 230px;
+body {
+    overflow-y: scroll;
 }
 
-/* .icon {
-    display: inline-block;
-    text-align: right;
-    position: absolute;
-    right: 20px;
-    width: 60%;
-    max-width: 600px;
+/* --- 福岡大学のロゴ ---------------------------------------------------------------- */
+header .logo {
+  margin: 20px 0;
+  text-align: center;
 }
 
-.icon-style > a > img {
-    width: 10%;
-    padding-right: 1%;
-} */
-
-
-
-/* #form4 {
-    position:relative;
-    max-width:300px;	
-    margin-bottom:20px;
+header .logo-img {
+  width: 40%;
+  max-width: 400px;
+  min-width: 230px;
 }
-#sbox4{
-    height:50px;
-    padding:0 10px; 
-    position:absolute; 
-    left:0;
-    top:0; 
-    border-radius:25px;
-    outline:0;
-    background:#eee;
-}
-#sbtn4{
-    height:50px;
-    width:50px;	
-    position:absolute; 
-    left:250px; 
+
+
+
+
+
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
     top:0;
-    background:#8d0000;
-    color:#fff;
-    border:none;
-    border-radius:0 25px 25px 0;
+    right: -300px;
+    width: 200px;
+    height: 40vh;/*ナビの高さ*/
+    /* background: #8d0000; */
+    /*動き*/
+    transition: all 0.6s;
+    opacity: 0.9;
 }
-#sbtn4 .fa-search{
-    font-size:20px;	
-    position:absolute;
-    top:30%;
-    left:30%;	
-}
-#sbtn4:hover{
-    color:#888;
-} */
 
-
-/* .search_container input[type="text"]{
-	border: none;
-	height: 2.0em;
-  }
-.search_container input[type="text"]:focus {
-	outline: 0;
-  }
-.search_container input[type="submit"]{
-	cursor: pointer;
-	font-family: FontAwesome;
-	border: none;
-	background: #8d0000;
-	color: #fff;
-	position: absolute;
-	width: 3.5em; 
-	height: 3.5em;
-	right:0px;
-	top: -6px;
-	outline : none;
-} */
-
-
-
-.search_container{
-    box-sizing: border-box;
-    position: relative;
-    border: 2px solid #999;
-    display: block;
-    padding: 3px 10px;
-    border-radius: 20px;
-    height: 2.3em;
-    width: 45%;
-    min-width: 300px;
-    max-width: 400px;
-    overflow: hidden;
-    left: 2%;
-}
-.search_container input[type="search"]{
-    border: none;
-    width: 87%;
-    height: 2.0em;
-}
-.search_container input[type="search"]:focus {
-    outline: 0;
-}
-.search_container input[type="button"]{
-    cursor: pointer;
-    font-family: FontAwesome;
-    border: none;
-    background: #8d0000;
-    color: #fff;
-    position: absolute;
-    width: 15%;
-    max-width: 4.5em;
-    height: 3.0em;
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
     right: 0px;
-    top: -3px;
-    outline : none;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top: 50px;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    /* background: linear-gradient(to right, #fff, rgb(189, 118, 118), rgb(160, 81, 81)); */
+    background: #8d0000;
+    color: rgb(255, 255, 255);
+    padding: 300px 0 0 5%;
+    width: 300px;
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+    list-style: none;
+    text-align: left;
+    display: block;
+    height: 35px;
+    cursor: pointer;
+    /* padding: 0; */
+}
+
+/* #g-nav li:hover {
+    background-color: #8d0000;
+} */
+
+/* #g-nav li a{
+  color: #333;
+  text-decoration: none;
+  padding:10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+} */
+
+
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn1{
+    position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+    top:20px;
+    right: 10px;
+    cursor: pointer;
+    width: 50px;
+    height:50px;
+    /* background-color: #8d0000; */
+}
+    
+/*×に変化*/  
+.openbtn1 span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    /* background-color: rgb(255, 255, 255); */
+    background-color: #8d0000;
+    width: 45%;
+}
+  
+.openbtn1 span:nth-of-type(1) {
+    top:15px; 
+}
+  
+.openbtn1 span:nth-of-type(2) {
+    top:23px;
+}
+  
+.openbtn1 span:nth-of-type(3) {
+    top:31px;
+}
+  
+.openbtn1.active span:nth-of-type(1) {
+      top: 18px;
+      left: 18px;
+      transform: translateY(6px) rotate(-45deg);
+      width: 30%;
+}
+  
+.openbtn1.active span:nth-of-type(2) {
+    opacity: 0;
+}
+  
+.openbtn1.active span:nth-of-type(3){
+      top: 30px;
+      left: 18px;
+      transform: translateY(-6px) rotate(45deg);
+      width: 30%;
 }
   
 
-/* ﾎﾞｰﾀﾞｰ */
-
-.cp_navi {
-	background-color: #8d0000;
-	border: 1px solid #dedede;
-	border-radius: 4px;
-	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
-	color: #888888;
-	display: block;
-	margin: 0.5em 0;
-	overflow: hidden;
-	width: 100%;
-}
-
-.cp_navi ul {
-	margin: 0;
-	padding: 0;
-    text-align: right;
-}
-
-.cp_navi ul li {
-	display: inline-block;
-	list-style-type: none;
-	-webkit-transition: all 0.2s;
-	        transition: all 0.2s;
-    color: #ffffff;
-    /* display: block; */
-    line-height: 56px;
-    padding-right: 20px;
-    text-decoration: none;
-}
-
-.cp_navi1 {
-    color: #aaaaaa;
-        display: block;
-        line-height: 56px;
-        padding: 0 10px;
-        text-decoration: none;
-}
 
 
 
 
+  
 
 
 
 
-
+/* --- 検索バー -------------------------------------------------------------------- */
 .search-text {
-    display: inline-block;
-    width: 55%;
+  display: inline-block;
+  width: 55%;
+}
+
+.search_container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  border: 2px solid #999;
+  display: block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 2.3em;
+  width: 45%;
+  min-width: 300px;
+  max-width: 400px;
+  overflow: hidden;
+  /* left: 5%; */
+  margin: 0 auto;
+}
+
+.search_container input[type="search"] {
+  border: 0;
+  outline: 0;
+  width: 85%;
+  height: 2.0em;
+}
+
+/* クリック誤差 */
+/* .search_container input[type="search"]::-webkit-search-cancel-button {
+    position: absolute;
+    right: 28px;
+    cursor:pointer;
+} */
+
+.search_container input[type="search"]:focus {
+  outline: 0;
+}
+
+.search_container input[type="button"] {
+  cursor: pointer;
+  font-family: FontAwesome;
+  border: none;
+  background: #8d0000;
+  color: #fff;
+  position: absolute;
+  width: 15%;
+  max-width: 4.5em;
+  height: 3.0em;
+  right: 0px;
+  top: -3px;
+  outline: none;
+}
+
+/* safari専用 */
+_::-webkit-full-page-media, _:future, :root .search_container input[type="search"] {
+  width: 86%;
+  font-size: 14px;
+  -webkit-appearance: none;
+}
+
+_::-webkit-full-page-media, _:future, :root .search_container input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-image: url(images/x-icon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 13px;
+  height: 13px;
+}
+
+_::-webkit-full-page-media, _:future, :root .search_container input[type="button"] {
+  top: 0;
+}
+
+/* --- メニュー -------------------------------------------------------------------- */
+.cp_navi {
+  background-color: #8d0000;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+  color: #888888;
+  display: block;
+  margin: 0.7em 0;
+  /* overflow: hidden; */
+  width: 100%;
+  /* height: 5vw; */
+}
+
+#cp_navi {
+    font-size: 1vw;
+}
+
+.cp_navi > ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.cp_navi > ul > li {
+  display: inline-block;
+  list-style-type: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  color: #ffffff;
+  line-height: 56px;
+  padding: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
+  /* width: 15%; */
 
 }
 
+.cp_navi > ul > .mapmenu {
+  position: relative;
+}
+
+.cp_navi > ul > .mapmenu > label {
+  padding: 20px 15px;
+}
+
+
+.cp_navi > ul > .mapmenu > label > .icon {
+    height: 10px;
+}
+
+.cp_navi > ul > li > .dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  width: 100%;
+  background-color: #da3c41;
+  /* background-color: #8d0000; */
+  -webkit-transition: all .5s ease;
+          transition: all .5s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  padding: 0;
+  text-align: center;
+}
+
+.cp_navi > ul > li > .dropdown > li {
+  display: block;
+}
+
+.cp_navi > ul > .mapmenu:hover > .dropdown {
+  top: 56px;
+  visibility: visible;
+  opacity: 0.9;
+  display: block;
+  /* transform: translateY(56px);
+    -ms-transform: translateY(56px);IE９対策 */
+}
+
+
+
+
+.cp_navi > ul > .mapmenu > label input[type="checkbox"]:checked + #dropdown {
+    /* top: 56px;
+    visibility: visible;
+    opacity: 0.9;
+    display: block; */
+    /* transform: translateY(56px);
+      -ms-transform: translateY(56px);IE９対策 */
+}
+
+
+
+
+.cp_navi > ul > li:hover {
+  background-color: #da3c41;
+}
+
+.cp_navi > ul > .mapmenu > .dropdown > li:hover {
+  background-color: #8d0000;
+  /* background-color: #da3c41; */
+}
+
+/* --- マップ -------------------------------------------------------------------- */
 .imagesBox {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  position: relative;
+  text-align: center;
 }
 
 .imagesBox > .img {
-    position: absolute;
+  position: absolute;
 }
 
 .imagesBox > .map {
-    width: 100%;
-    top: 0;
-    left: 0;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .imagesBox > .pin {
-    width: 5%;
-    height: 6.5%;
-    top: 50%;
-    left: 80%;
-    opacity: 0;
-    position: absolute;
+  width: 5%;
+  height: auto;
+  top: 50%;
+  left: 80%;
+  opacity: 0;
+  position: absolute;
+}
+
+/* --- フォーム -------------------------------------------------------------------- */
+form {
+  background-color: #353535;
+  width: 100%;
+}
+
+form > div {
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
 }
