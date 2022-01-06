@@ -138,7 +138,7 @@ function search(){  // 検索からpinを刺す場所を返す
     var search_text = document.getElementById("search-text");
     var search_word = search_text.value;
     switch (true){
-        case/大学本館/.test(search_word):
+        case/^大学/.test(search_word):
             xarray = [72.6, 0, 0, 0];
             yarray = [29.8, 0, 0, 0];
             break;
@@ -150,14 +150,14 @@ function search(){  // 検索からpinを刺す場所を返す
             xarray = [65.4, 0, 0, 0];
             yarray = [31, 0, 0, 0];
             break;
-        case/エクステンションセンター/.test(search_word):
+        case/^エクス/.test(search_word):
             xarray = [67.2, 0, 0, 0];
             yarray = [30, 0, 0, 0];
             break;
-        // case/健康管理センター/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
+        case/^健康/.test(search_word):
+            xarray = [71.9, 0, 0, 0];
+            yarray = [26.5, 0, 0, 0];
+            break;
         case /^[1１一][1１2２3３号][1１2２3３館]/.test(search_word):
             xarray = [69.2, 0, 0, 0];
             yarray = [23, 0, 0, 0];
@@ -175,14 +175,14 @@ function search(){  // 検索からpinを刺す場所を返す
             yarray = [35.5, 0, 0, 0];
             break;
         //中央図書館及び陽だまり
-        // case/^[中図]/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
-        // case/^[ひ陽]/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
+        case/^[中図]/.test(search_word):
+            xarray = [61.5, 0, 0, 0];
+            yarray = [15, 0, 0, 0];
+            break;
+        case/^[ひ陽]/.test(search_word):
+            xarray = [63.1, 0, 0, 0];
+            yarray = [14.9, 0, 0, 0];
+            break;
         //11-20
         case /^[2２二]/.test(search_word):
             xarray = [65.8, 0, 0, 0];
@@ -201,19 +201,19 @@ function search(){  // 検索からpinを刺す場所を返す
             xarray = [24.4, 0, 0, 0];
             yarray = [41.8, 0, 0, 0];
             break;
-        case/スカッシュ/.test(search_word):
+        case/^スカッシュ/.test(search_word):
             xarray = [22, 0, 0, 0];
             yarray = [45.5, 0, 0, 0];
             break;
-        case/体操ビット棟/.test(search_word):
+        case/^体操/.test(search_word):
             xarray = [24.2, 0, 0, 0];
             yarray = [46.2, 0, 0, 0];
             break;
-        case/スポーツ科学部研究室棟/.test(search_word):
+        case/^スポーツ/.test(search_word):
             xarray = [27.4, 0, 0, 0];
             yarray = [47.2, 0, 0, 0];
             break;
-        case/陸上競技場部室棟/.test(search_word):
+        case/部室棟$/.test(search_word):
             xarray = [33.5, 0, 0, 0];
             yarray = [31.7, 0, 0, 0];
             break;
@@ -222,19 +222,16 @@ function search(){  // 検索からpinを刺す場所を返す
             yarray = [31, 0, 0, 0];
             break;
         //21-30
-        // case/^[6６六][0０十]/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
-        case/ヘリオスプラザ/.test(search_word):
+        case/^[6６六][0０十]/.test(search_word):
+        case/^ヘリオス/.test(search_word):
             xarray = [55, 0, 0, 0];
             yarray = [34.8, 0, 0, 0];
             break;
-        case/学而会館/.test(search_word):
+        case/^学而/.test(search_word):
             xarray = [64.4, 0, 0, 0];
             yarray = [35, 0, 0, 0];
             break;
-        case/有朋会館/.test(search_word):
+        case/^有朋/.test(search_word):
             xarray = [58.8, 0, 0, 0];
             yarray = [40.8, 0, 0, 0];
             break;
@@ -242,11 +239,11 @@ function search(){  // 検索からpinを刺す場所を返す
             xarray = [64.6, 0, 0, 0];
             yarray = [48.5, 0, 0, 0];
             break;
-        case/留学生会館片江/.test(search_word):
+        case/片江$/.test(search_word):
             xarray = [67.8, 0, 0, 0];
             yarray = [45.8, 0, 0, 0];
             break;
-        case/ビクトリーホール/.test(search_word):
+        case/^ビクトリ/.test(search_word):
             xarray = [70.5, 0, 0, 0];
             yarray = [45.2, 0, 0, 0];
             break;
@@ -254,7 +251,7 @@ function search(){  // 検索からpinを刺す場所を返す
             xarray = [69.5, 0, 0, 0];
             yarray = [48.5, 0, 0, 0];
             break;
-        case/オリオンホール/.test(search_word):
+        case/^オリオン/.test(search_word):
             xarray = [68.1, 0, 0, 0];
             yarray = [50.8, 0, 0, 0];
             break;
@@ -262,12 +259,12 @@ function search(){  // 検索からpinを刺す場所を返す
             xarray = [51.7, 0, 0, 0];
             yarray = [55.5, 0, 0, 0];
             break;
-        case/国際交流会館/.test(search_word):
+        case/^国際/.test(search_word):
             xarray = [53.4, 0, 0, 0];
             yarray = [74.2, 0, 0, 0];
             break;
         //31-40
-        case/法科大学院/.test(search_word):
+        case/^法科/.test(search_word):
         case/^[1１一][5５五]/.test(search_word):
             xarray = [78.2, 0, 0, 0];
             yarray = [20.5, 0, 0, 0];
@@ -284,7 +281,7 @@ function search(){  // 検索からpinを刺す場所を返す
             xarray = [63, 0, 0, 0];
             yarray = [10.5, 0, 0, 0];
             break;
-        case/RIセンター/.test(search_word):
+        case/^RI/.test(search_word):
             xarray = [70, 0, 0, 0];
             yarray = [9.8, 0, 0, 0];
             break;
@@ -309,68 +306,65 @@ function search(){  // 検索からpinを刺す場所を返す
             yarray = [6.2, 0, 0, 0];
             break;
         //41-50
-        // case/流体工学実験室/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
-        // case/加工プロセス実験室/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
-        // case/コンクリート実験室/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
+        case/^流体/.test(search_word):
+            xarray = [79, 0, 0, 0];
+            yarray = [5.5, 0, 0, 0];
+            break;
+        case/^加工/.test(search_word):
+            xarray = [80.35, 0, 0, 0];
+            yarray = [8.2, 0, 0, 0];
+            break;
+        case/^コンクリ/.test(search_word):
+            xarray = [72.3, 0, 0, 0];
+            yarray = [13, 0, 0, 0];
+            break;
         case/^[4４四]/.test(search_word):
             xarray = [78.7, 0, 0, 0];
             yarray = [17.2, 0, 0, 0];
             break;
-        // case/環境科学技術実証施設棟/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
-        // case/空気力学実験室/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
-        // case/高電圧実験室/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
-        // case/数理衛生工学実験室南棟/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
-        // case/水理土木研修館/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
-        // case/数理衛生工学実験室/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
+        case/^環境/.test(search_word):
+            xarray = [76.5, 0, 0, 0];
+            yarray = [21.3, 0, 0, 0];
+            break;
+        case/^空気/.test(search_word):
+            xarray = [79.1, 0, 0, 0];
+            yarray = [18.6, 0, 0, 0];
+            break;
+        case/^高電/.test(search_word):
+            xarray = [83.6, 0, 0, 0];
+            yarray = [18.6, 0, 0, 0];
+            break;
+        case/水理衛生工学実験室南棟/.test(search_word):
+            xarray = [55.45, 0, 0, 0];
+            yarray = [8.1, 0, 0, 0];
+            break;
+        case/水理土木研修館/.test(search_word):
+            xarray = [53.5, 0, 0, 0];
+            yarray = [6.8, 0, 0, 0];
+            break;
+        case/水理衛生工学実験室/.test(search_word):
+            xarray = [56.1, 0, 0, 0];
+            yarray = [6.7, 0, 0, 0];
+            break;
         //51-60
-        // case/水理衛生工学教室棟北棟/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
-        // case/廃棄物埋立大型シミュレータ棟/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
+        case/水理衛生工学教室棟北棟/.test(search_word):
+            xarray = [57.9, 0, 0, 0];
+            yarray = [6.6, 0, 0, 0];
+            break;
+        case/^廃棄/.test(search_word):
+            xarray = [56.3, 0, 0, 0];
+            yarray = [4.8, 0, 0, 0];
+            break;
         case /^[3３三]/.test(search_word):
 　　　　    xarray = [60, 0, 0, 0];
             yarray = [8.8, 0, 0, 0];
             break;
         //16号館or薬学部棟
         case/^[1１十][6６六]/.test(search_word):
+        case/^[薬]/.test(search_word):
             xarray = [54.5, 0, 0, 0];
             yarray = [16.7, 0, 0, 0];
             break;
-        // case/^[薬]/.test(search_word):
-        //     xarray = [0, 0, 0, 0];
-        //     yarray = [0, 0, 0, 0];
-        //     break;
         case/^[1１十][7７七]/.test(search_word):
             xarray = [49.7, 0, 0, 0];
             yarray = [15.1, 0, 0, 0];
@@ -379,60 +373,60 @@ function search(){  // 検索からpinを刺す場所を返す
             xarray = [23.3, 0, 0, 0];
             yarray = [17.8, 0, 0, 0];
             break;
-//         case/医学部研究棟別館/.test(search_word):
-//             xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-//         case/医学部講義棟/.test(search_word):
-//             xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-//         case/医学部実習棟/.test(search_word):
-//             xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-//         //61-70
-//         case/看護学科棟$/.test(search_word):
-//             xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-//         case/医学部RI講義棟/.test(search_word):
-//             xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-//     　　case/アニマルセンター/.test(search_word):
-//    　　     xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-//         case/先端分子医学研究所/.test(search_word):
-//             xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-//         case/医学情報センター棟/.test(search_word):
-//             xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-//         case/医学部愛好会室棟/.test(search_word):
-//             xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-//         case/福岡大学病院本館/.test(search_word):
-//             xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-//         case/西別館$/.test(search_word):
-//             xarray = [0, 0, 0, 0];
-//             yarray = [0, 0, 0, 0];
-//             break;
-        case/救命救急センター棟/.test(search_word):
+        case/医学部研究棟別館/.test(search_word):
+            xarray = [23.1, 0, 0, 0];
+            yarray = [23, 0, 0, 0];
+            break;
+        case/医学部講義棟/.test(search_word):
+            xarray = [18.5, 0, 0, 0];
+            yarray = [18.2, 0, 0, 0];
+            break;
+        case/実習棟$/.test(search_word):
+            xarray = [17.1, 0, 0, 0];
+            yarray = [20.2, 0, 0, 0];
+            break;
+        //61-70
+        case/看護学科棟$/.test(search_word):
+            xarray = [22.6, 0, 0, 0];
+            yarray = [27, 0, 0, 0];
+            break;
+        case/医学部RI講義棟/.test(search_word):
+            xarray = [18.5, 0, 0, 0];
+            yarray = [25.7, 0, 0, 0];
+            break;
+    　　case/^アニマル/.test(search_word):
+   　　     xarray = [15.5, 0, 0, 0];
+            yarray = [22.5, 0, 0, 0];
+            break;
+        case/^先端/.test(search_word):
+            xarray = [16.8, 0, 0, 0];
+            yarray = [26.9, 0, 0, 0];
+            break;
+        case/^医学情報/.test(search_word):
+            xarray = [18.5, 0, 0, 0];
+            yarray = [13.4, 0, 0, 0];
+            break;
+        case/医学部愛好会室棟/.test(search_word):
+            xarray = [16.1, 0, 0, 0];
+            yarray = [16.1, 0, 0, 0];
+            break;
+        case/福岡大学病院本館/.test(search_word):
+            xarray = [30.2, 0, 0, 0];
+            yarray = [11, 0, 0, 0];
+            break;
+        case/福岡大学病院西別館/.test(search_word):
+            xarray = [23.8, 0, 0, 0];
+            yarray = [9.8, 0, 0, 0];
+            break;
+        case/^救命/.test(search_word):
             xarray = [34.8, 0, 0, 0];
             yarray = [10, 0, 0, 0];
             break;
-        case/福岡大学病院情報管理等/.test(search_word):
+        case/情報管理等$/.test(search_word):
             xarray = [31.1, 0, 0, 0];
             yarray = [19.7, 0, 0, 0];
             break;
-    　　case/福岡大学病院研修センター/.test(search_word):
+    　　case/研修センター$/.test(search_word):
     　　    xarray = [31.8, 0, 0, 0];
             yarray = [5.1, 0, 0, 0];
             break;
@@ -445,31 +439,31 @@ function search(){  // 検索からpinを刺す場所を返す
             xarray = [34.8, 0, 0, 0];
             yarray = [0.8, 0, 0, 0];
             break;
-        case/^デイケア棟/.test(search_word):
+        case/デイケア棟別館/.test(search_word):
             xarray = [32.7, 0, 0, 0];
             yarray = [0, 0, 0, 0];
             break;
-        case/福岡大学病院デイケア棟/.test(search_word):
+        case/デイケア棟$/.test(search_word):
             xarray = [31.2, 0, 0, 0];
             yarray = [1, 0, 0, 0];
             break;
-        case/福岡大学病院新館/.test(search_word):
+        case/新館$/.test(search_word):
             xarray = [38, 0, 0, 0];
             yarray = [20.2, 0, 0, 0];
             break;
-        case/福大プラザ/.test(search_word):
+        case/プラザ$/.test(search_word):
             xarray = [40.3, 0, 0, 0];
             yarray = [22.7, 0, 0, 0];
             break;
-        case/福大メディカルホール/.test(search_word):
+        case/メディカルホール$/.test(search_word):
             xarray = [39.8, 0, 0, 0];
             yarray = [19.6, 0, 0, 0];
             break;
-        case/福岡大学病院前テナント棟/.test(search_word):
+        case/テナント棟$/.test(search_word):
             xarray = [31.1, 0, 0, 0];
             yarray = [19.6, 0, 0, 0];
             break;
-        case/留学生会館梅林/.test(search_word):
+        case/梅林$/.test(search_word):
             xarray = [17.8, 0, 0, 0];
             yarray = [3.3, 0, 0, 0];
             break;
