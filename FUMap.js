@@ -1,10 +1,10 @@
 
 function resizeWindow(event){  // cssを画面サイズごとに動的変更
-    // document.getElementById('wsize').innerText = 'width:' + window.innerWidth + 'px';
-    // document.getElementById('hsize').innerText = 'height:' + window.innerHeight + 'px';
 
     if( window.innerWidth > 1350 ) {
         document.getElementById('cp_navi').style.fontSize = "1vw";
+    } else if( window.innerWidth < 650 ) {
+        document.getElementById('cp_navi').style.fontSize = "9.5px";
     } else {
         document.getElementById('cp_navi').style.fontSize = "14px";
     }
@@ -12,25 +12,6 @@ function resizeWindow(event){  // cssを画面サイズごとに動的変更
 
 window.addEventListener('load', resizeWindow);
 window.addEventListener('resize', resizeWindow);
-
-
-
-
-
-
-// $(".openbtn1").click(function () {//ボタンがクリックされたら
-//     $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-//       $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
-// });
-  
-// $("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
-//       $(".openbtn1").removeClass('active');//ボタンの activeクラスを除去し
-//       $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
-// });
-
-
-
-
 
 
 
