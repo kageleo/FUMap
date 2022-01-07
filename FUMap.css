@@ -321,14 +321,7 @@ _::-webkit-full-page-media, _:future, :root .search_container input[type="button
 
 
 
-.cp_navi > ul > .mapmenu > label input[type="checkbox"]:checked + #dropdown {
-    /* top: 56px;
-    visibility: visible;
-    opacity: 0.9;
-    display: block; */
-    /* transform: translateY(56px);
-      -ms-transform: translateY(56px);IE９対策 */
-}
+
 
 
 
